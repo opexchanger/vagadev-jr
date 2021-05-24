@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Luta",
+    "id": 1,
+    "games": [
+      {
+        "name": "Mortal Kombat",
+        "id": 1
+      },
+      {
+        "name": "Smash Bros",
+        "id": 2
+      },
+      {
+        "name": "Killer Instinct",
+        "id": 3
+      },
+      {
+        "name": "DBZ Kakarot",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "name": "Ação / Aventura",
+    "id": 2,
+    "games": [
+      {
+        "name": "GTA V",
+        "id": 5
+      },
+      {
+        "name": "Tomb Raider",
+        "id": 6
+      },
+      {
+        "name": "HALO",
+        "id": 7
+      },
+      {
+        "name": "Call of Duty",
+        "id": 8
+      }
+    ]
+  },
+  {
+    "name": "Corrida",
+    "id": 3,
+    "games": [
+      {
+        "name": "NEED For SPEED",
+        "id": 9
+      },
+      {
+        "name": "Forza Horizon",
+        "id": 10
+      }
+    ]
+  }
+]
