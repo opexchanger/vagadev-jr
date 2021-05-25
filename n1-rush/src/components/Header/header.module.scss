@@ -4,3 +4,42 @@
   width: 100%;
   background-color: transparent;
 }
+
+.logoWrapper {
+  margin-left: 10px;
+  @media screen and (max-width: 274px) {
+    display: none;
+  }
+}
+
+///
+
+.button {
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+  width: 32px;
+  height: 24px;
+  margin: 0 2px;
+}
+
+.panelLeft,
+.panelRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelLeft {
+  flex-basis: 50%;
+}
+
+.panelRight {
+  flex-basis: 40%;
+}
+
+.logo {
+  width: 107px;
+  height: 27px;
+}
