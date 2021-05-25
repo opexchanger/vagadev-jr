@@ -32,11 +32,13 @@
 }
 
 .panelLeft {
-  flex-basis: 50%;
+  flex-basis: 49%;
+  max-width: 170px;
 }
 
 .panelRight {
   flex-basis: 40%;
+  max-width: 180px;
 }
 
 .logo {
