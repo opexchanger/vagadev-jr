@@ -3,7 +3,8 @@ import style from './icon-button.module.scss';
 // recebe o icon para exiber no botão e possíveis opções para alterná-lo
 
 export default function IconButton({
-  styles,
+  width,
+  height,
   labelText,
   icon,
   iconActive,
@@ -16,7 +17,11 @@ export default function IconButton({
       className={style.button}
       aria-label={labelText}
       onClick={handleClick ? handleClick : undefined}
-      style={styles}
+      // padrão pré definido por ser utilizado a maioria das vezes
+      style={{
+        width: `${width ? width : '32px'}`,
+        height: `${height ? height : '24px'}`,
+      }}
       {...restProps}
     >
       {!toggler ? icon : iconActive}
