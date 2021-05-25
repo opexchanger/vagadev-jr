@@ -1,27 +1,9 @@
+// position absolute para sobrepor com a imagem de fundo
 .header {
   padding: 2rem 0;
   position: absolute;
   width: 100%;
   background-color: transparent;
-}
-
-.logoWrapper {
-  margin-left: 10px;
-  @media screen and (max-width: 274px) {
-    display: none;
-  }
-}
-
-///
-
-.button {
-  border: 0;
-  background-color: transparent;
-  position: relative;
-  z-index: 10;
-  width: 32px;
-  height: 24px;
-  margin: 0 2px;
 }
 
 .panelLeft,
@@ -31,17 +13,22 @@
   justify-content: space-between;
 }
 
+// controla até onde crescem pra não ficarem muito espaçados
 .panelLeft {
   flex-basis: 49%;
   max-width: 170px;
 }
-
 .panelRight {
   flex-basis: 40%;
   max-width: 180px;
+  min-width: 130px;
+  // tamanho mínimo pra não ficar muito dif´ícil de selecionar no celular
 }
 
-.logo {
-  width: 107px;
-  height: 27px;
+.logoWrapper {
+  margin-left: 10px;
+  // não exibe quando a tela es´ta pequena demais
+  @media screen and (max-width: 299px) {
+    display: none;
+  }
 }

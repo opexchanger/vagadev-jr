@@ -1,9 +1,10 @@
 import style from './container.module.scss';
 
-export default function Container({ flex, justify, align, children }) {
+export default function Container({ width, flex, justify, align, children }) {
   // monta um objeto de estilos dependendo das props passadas
-  // não contém todas as possibilidades pq por enquanto ta contida no caso de uso da aplicação
+  // não contém possibilidades em aberto pq por enquanto ta contida no caso de uso da aplicação
   const styles = {};
+  if (width) styles.maxWidth = `${width}%`;
   if (flex) styles.display = 'flex';
   if (justify) styles.justifyContent = justify;
   if (align) styles.alignItems = align;
@@ -14,9 +15,3 @@ export default function Container({ flex, justify, align, children }) {
     </div>
   );
 }
-
-// style={`
-//     ${flex && 'display: flex'}
-//     ${flex && justify ? `justify-content: ${justify}` : ''}
-//     ${flex && align ? `align-items: ${align}` : ''}
-//   `}

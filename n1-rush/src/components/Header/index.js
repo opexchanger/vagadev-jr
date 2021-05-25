@@ -17,23 +17,20 @@ import style from './header.module.scss';
 import { useState } from 'react';
 
 export default function Header() {
+  // cria estado para a visibilidade do dropdown
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <header className={style.header}>
       <Container flex justify='space-between'>
         <div className={style.panelLeft}>
-          <button
-            className={style.button}
-            aria-label='Abrir o menu'
+          <IconButton
+            labelText='Abrir o menu'
+            icon={<HamburgerMenu fill='#ffffff' height='100%' />}
+            iconActive={<CloseMenu fill='#ffffff' height='100%' />}
+            toggler={menuVisible}
             onClick={() => setMenuVisible(!menuVisible)}
-          >
-            {menuVisible ? (
-              <CloseMenu fill='#ffffff' height='100%' />
-            ) : (
-              <HamburgerMenu fill='#ffffff' height='100%' />
-            )}
-          </button>
+          />
           <Link href='/'>
             <a className={style.logoWrapper}>
               <Logo />
@@ -42,38 +39,44 @@ export default function Header() {
         </div>
 
         {menuVisible && (
-          <DropdownMenu>
-            <h3>Luta</h3>
-            <ul>
-              <li>Mortal Kombat</li>
-              <li>Smash Bros</li>
-              <li>Tekken</li>
-              <li>DBZ</li>
-            </ul>
-            <h3>Luta</h3>
-            <ul>
-              <li>Mortal Kombat</li>
-              <li>Smash Bros</li>
-              <li>Tekken</li>
-              <li>DBZ</li>
-            </ul>
+          <DropdownMenu labelText='Navegue nossos títulos por categoria'>
+            <DropdownMenu.Title>Luta</DropdownMenu.Title>
+            <DropdownMenu.List>
+              <DropdownMenu.ListItem>Mortal Kombat</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Smash Bros</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Tekken</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>DBZ</DropdownMenu.ListItem>
+            </DropdownMenu.List>
+
+            <DropdownMenu.Title>Luta</DropdownMenu.Title>
+            <DropdownMenu.List>
+              <DropdownMenu.ListItem>Mortal Kombat</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Smash Bros</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Tekken</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>DBZ</DropdownMenu.ListItem>
+            </DropdownMenu.List>
           </DropdownMenu>
         )}
 
         <div className={style.panelRight}>
-          <button className={style.button} aria-label='Abrir a tela de contato'>
-            <PaperPlane
-              fill='#ffffff'
-              height='100%'
-              style={{ marginTop: '1px' }}
-            />
-          </button>
-          <button className={style.button} aria-label='Abrir a tela de contato'>
-            <Search fill='#ffffff' height='100%' />
-          </button>
-          <button className={style.button} aria-label='Abrir a tela de contato'>
-            <ShoppingBag fill='#ffffff' height='100%' />
-          </button>
+          <IconButton
+            labelText='Abrir a tela de contato'
+            icon={
+              <PaperPlane
+                fill='#ffffff'
+                height='100%'
+                style={{ marginTop: '1px' }}
+              />
+            }
+          />
+          <IconButton
+            labelText='Procurar algum game'
+            icon={<Search fill='#ffffff' height='100%' />}
+          />
+          <IconButton
+            labelText='Ver o seu carrinho'
+            icon={<ShoppingBag fill='#ffffff' height='100%' />}
+          />
         </div>
       </Container>
     </header>
