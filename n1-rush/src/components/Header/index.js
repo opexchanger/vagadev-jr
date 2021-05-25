@@ -3,7 +3,10 @@ import Link from 'next/link';
 import Container from '../Container';
 import IconButton from '../IconButton';
 import DropdownMenu from '../DropdownMenu';
-import { HamburgerMenu, CloseMenu } from '../../icons';
+
+// icons
+import HamburgerMenu from '../../icons/hamburger-menu.svg';
+import CloseMenu from '../../icons/close-menu.svg';
 
 import style from './header.module.scss';
 
@@ -17,7 +20,7 @@ export default function Header() {
       <Container>
         <IconButton
           labelText='Abrir o menu'
-          iconOpen={<HamburgerMenu fill='#ffffff' />}
+          iconOpen={<HamburgerMenu fill='red' />}
           iconClose={<CloseMenu fill='#ffffff' />}
           toggler={menuVisible}
           handleClick={() => setMenuVisible(!menuVisible)}
