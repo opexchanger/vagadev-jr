@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import style from './banner.module.scss';
 
-export default function Card({ gameName, imageSrc, altText, ...restProps }) {
+export default function Banner({ gameName, imageSrc, altText, ...restProps }) {
   return (
-    <article className={style.cardWrapper} {...restProps}>
+    <article className={style.bannerWrapper} {...restProps}>
       <Link href='/'>
         <a>
           <div className={style.imageWrapper}>
@@ -14,12 +14,12 @@ export default function Card({ gameName, imageSrc, altText, ...restProps }) {
               alt={altText}
               width={588}
               height={357}
-              className={style.cardImage}
+              className={style.bannerImage}
             />
           </div>
 
-          <footer className={style.cardFooter}>
-            <h4 className={style.cardTitle}>{gameName}</h4>
+          <footer className={style.bannerFooter}>
+            <h4 className={style.bannerTitle}>{gameName}</h4>
           </footer>
         </a>
       </Link>

@@ -1,0 +1,32 @@
+.footerWrapper {
+  margin-top: 8rem;
+  display: flex;
+  @media screen and (max-width: 250px) {
+    flex-direction: column;
+  }
+}
+
+.logoBox {
+  padding: 2rem;
+  background-color: var(--blue-dark);
+  flex: 0 0 24%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  padding: 2rem 1.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+  width: 100%;
+
+  p {
+    max-width: 220px;
+    margin-bottom: 0;
+  }
+}
+
+.logo {
+  min-width: 35px;
+}

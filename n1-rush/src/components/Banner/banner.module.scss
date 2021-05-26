@@ -1,4 +1,4 @@
-.cardWrapper {
+.bannerWrapper {
   margin-bottom: 3.5rem;
   transition: all 0.4s;
   border-bottom-right-radius: 5px;
@@ -6,17 +6,17 @@
   overflow: hidden;
 
   &:hover {
-    & .cardTitle {
+    & .bannerTitle {
       color: var(--blue-middle);
     }
-    & .cardImage {
+    & .bannerImage {
       transform: scale3d(1.05, 1.05, 1.05);
       // opacity: 0.92;
     }
   }
 }
 
-.cardImage {
+.bannerImage {
   transition: all 0.5s;
   backface-visibility: hidden;
 }
@@ -29,7 +29,7 @@
   }
 }
 
-.cardFooter {
+.bannerFooter {
   background: linear-gradient(
     to right,
     var(--blue-dark) 0 2%,
@@ -38,7 +38,7 @@
   padding: 1rem 2rem;
 }
 
-.cardTitle {
+.bannerTitle {
   margin-bottom: 0;
   color: var(--blue-dark);
   overflow: hidden;
