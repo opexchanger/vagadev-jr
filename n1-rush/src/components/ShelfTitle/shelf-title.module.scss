@@ -1,0 +1,24 @@
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: var(--blue-dark);
+    margin: 0;
+    margin-left: 2rem;
+  }
+
+  &::after {
+    order: -1;
+    content: '';
+    display: block;
+    background-image: url('/icons/blue-dots.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 18px;
+    width: 18px;
+  }
+}

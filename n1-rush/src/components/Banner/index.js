@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import style from './card.module.scss';
+import style from './banner.module.scss';
 
 export default function Card({ gameName, imageSrc, altText, ...restProps }) {
   return (
