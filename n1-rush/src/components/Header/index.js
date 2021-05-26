@@ -24,6 +24,7 @@ export default function Header() {
     <header className={style.header}>
       <Container flex justify='space-between'>
         <div className={style.panelLeft}>
+          {/* botão do menu recebendo state e função pra alternar */}
           <IconButton
             labelText='Abrir o menu'
             icon={<HamburgerMenu fill='#ffffff' height='100%' />}
@@ -38,6 +39,7 @@ export default function Header() {
           </Link>
         </div>
 
+        {/* menu exibido condicionalmente a partir do state */}
         {menuVisible && (
           <DropdownMenu labelText='Navegue nossos títulos por categoria'>
             <DropdownMenu.Title>Luta</DropdownMenu.Title>

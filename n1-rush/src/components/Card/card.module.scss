@@ -1,0 +1,59 @@
+.cardWrapper {
+  margin-bottom: 3.5rem;
+  transition: all 0.4s;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+
+  &:hover {
+    & .cardTitle {
+      color: var(--blue-middle);
+    }
+    & .cardImage {
+      transform: scale3d(1.05, 1.05, 1.05);
+      // opacity: 0.92;
+    }
+  }
+}
+
+.cardImage {
+  transition: all 0.5s;
+  backface-visibility: hidden;
+}
+
+// correção de um aparente bug no next/image
+.imageWrapper {
+  margin-bottom: -1px;
+  & div:first-child {
+    display: block !important;
+  }
+}
+
+.cardFooter {
+  background: linear-gradient(
+    to right,
+    var(--blue-dark) 0 2%,
+    var(--blue) 2% 100%
+  );
+  padding: 1rem 2rem;
+}
+
+.cardTitle {
+  margin-bottom: 0;
+  color: var(--blue-dark);
+  overflow: hidden;
+  transition: color 0.5s;
+
+  // experimentei dois jeitos de fazer o efeito, mas com esse não quebra se o título passar de uma linha
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    height: 1.6px;
+    background-color: var(--blue-dark);
+    vertical-align: middle;
+    transform: translateY(-50%);
+  }
+}

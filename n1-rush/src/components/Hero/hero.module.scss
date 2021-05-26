@@ -1,5 +1,6 @@
 .hero {
   color: var(--white);
+  margin-bottom: 4rem;
 }
 
 .sliderImage {
@@ -73,6 +74,11 @@
   align-items: center;
   justify-content: space-evenly;
   flex-basis: 40%;
+
+  @media screen and (max-width: 280px) {
+    flex-direction: column;
+    padding-left: 0;
+  }
 }
 
 .sliderCounters {
@@ -80,7 +86,7 @@
 }
 
 .sliderChevrons > * {
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 340px) {
     margin: 0 1rem;
   }
 }
