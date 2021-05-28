@@ -1,7 +1,7 @@
 .shelfTitle {
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 
   h2 {
     font-size: 2.25rem;
@@ -9,6 +9,14 @@
     color: var(--blue-dark);
     margin: 0;
     margin-left: 2rem;
+
+    @media screen and (min-width: 900px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 3.5rem;
+    }
   }
 
   &::after {

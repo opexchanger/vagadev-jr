@@ -1,9 +1,11 @@
+import { useRef, useState } from 'react';
+import Image from 'next/image';
+
+// Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, A11y, Autoplay } from 'swiper';
 
-import Image from 'next/image';
-import { useRef, useState } from 'react';
-
+// Icon imports
 import IconButton from '../IconButton';
 import ChevronLeft from '../../icons/angle-left-solid.svg';
 import ChevronRight from '../../icons/angle-right-solid.svg';

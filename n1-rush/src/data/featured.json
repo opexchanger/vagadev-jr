@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Outriders",
+    "price": "200,00",
+    "cover": "outriders.jpg"
+  },
+  {
+    "id": 2,
+    "name": "CYBERPUNK 2077",
+    "price": "200,00",
+    "cover": "cyberpunk2077.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Donkey Kong Country Tropical Freeze",
+    "price": "200,00",
+    "cover": "donkey-kong.jpg"
+  }
+]

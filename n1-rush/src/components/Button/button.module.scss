@@ -8,4 +8,9 @@
   font-size: 1.8rem;
   border-radius: 5px;
   text-align: center;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--blue-middle);
+  }
 }

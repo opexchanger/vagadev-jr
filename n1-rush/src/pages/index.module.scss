@@ -20,6 +20,15 @@
   padding-bottom: 6rem;
 }
 
+.productsWrapper {
+  // @media screen and (min-width: 600px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  gap: 4rem;
+  justify-content: center;
+  // }
+}
+
 .sectionHero {
   color: var(--white);
   margin-bottom: 4rem;
