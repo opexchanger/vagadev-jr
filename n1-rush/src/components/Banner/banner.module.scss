@@ -9,14 +9,20 @@
     & .bannerTitle {
       color: var(--blue-middle);
     }
+
     & .bannerImage {
       transform: scale3d(1.05, 1.05, 1.05);
       // opacity: 0.92;
     }
   }
 
+  // acessibilidade
   &:focus {
     border: 2px solid darkgoldenrod;
+  }
+
+  @media screen and (min-width: 600px) {
+    margin: 0 1rem;
   }
 }
 
@@ -48,16 +54,24 @@
   overflow: hidden;
   transition: color 0.5s;
 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   // experimentei dois jeitos de fazer o efeito, mas com esse não quebra se o título passar de uma linha
   &::after {
     content: '';
     display: inline-block;
     width: 100%;
     margin-right: -100%;
-    margin-left: 10px;
+    margin-left: 1rem;
     height: 1.6px;
     background-color: var(--blue-dark);
     vertical-align: middle;
     transform: translateY(-50%);
+
+    @media screen and (min-width: 900px) {
+      margin-left: 2rem;
+    }
   }
 }

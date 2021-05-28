@@ -75,13 +75,15 @@ export default function Carousel({ items }) {
               layout='fill'
               objectFit='cover'
             />
-            <div className={style.heroOverlay}>
-              <h2 className={style.heroTitle}>{name}</h2>
-              <h2 className={style.heroPrice}>
-                {formatPrice(price)[0]}
-                <span>,{formatPrice(price)[1]}</span>
-              </h2>
-              <p className={style.heroText}>{description}</p>
+            <div className={style.container}>
+              <div className={style.heroOverlay}>
+                <h2 className={style.heroTitle}>{name}</h2>
+                <h2 className={style.heroPrice}>
+                  {formatPrice(price)[0]}
+                  <span>,{formatPrice(price)[1]}</span>
+                </h2>
+                <p className={style.heroText}>{description}</p>
+              </div>
             </div>
           </div>
         </SwiperSlide>
@@ -92,6 +94,7 @@ export default function Carousel({ items }) {
         <div className={style.sliderTitle}>
           {/* recuperando o título do item do state */}
           <h4>{currentSlide.title}</h4>
+          <span className={style.title__line}></span>
         </div>
         <div className={style.sliderControl}>
           <div className={style.sliderCounters}>

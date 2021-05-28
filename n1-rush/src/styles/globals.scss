@@ -1,8 +1,21 @@
 @import 'abstracts';
 
 html {
-  font-size: 50%;
   box-sizing: border-box;
+
+  font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+
+  @media screen and (min-width: 900px) {
+    font-size: 56.25%; // 1 rem = 9px
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 62.5%; //1 rem = 10px;
+  }
+
+  @media screen and (min-width: 1800px) {
+    font-size: 75%; // 1rem = 12px
+  }
 }
 
 *,

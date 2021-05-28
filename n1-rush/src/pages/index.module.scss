@@ -1,5 +1,17 @@
 .sectionBanners {
   margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: -12rem;
+    z-index: 333;
+    position: relative;
+  }
 }
 
 .sectionProducts {
