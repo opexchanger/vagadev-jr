@@ -29,16 +29,10 @@ export default function Carousel({ items }) {
   // cria state para guardar o nome e a posição do slide atual
   const [currentSlide, setCurrentSlide] = useState({ index: 0, title: '' });
 
-  // cria um array de refs vazias com o número de itens no array recebido
-  const sliderRef = Array.from({ length: items.length }).map(() =>
-    useRef(null)
-  );
-
   const updateSlide = (i) => {
     setCurrentSlide({
       index: i + 1,
-      // mais abaixo no map, os itens são inseridos dinamicamente no array de refs de acordo com seu index
-      title: sliderRef[i].current.getAttribute('data-title'),
+      title: items[i].name,
     });
   };
 
@@ -63,7 +57,7 @@ export default function Carousel({ items }) {
     >
       {items.map(({ name, coverSm, coverBg, price, description }, i) => (
         // coloca o Slide atual dentro do array de refs usando o seu index, que depois é resgatado pelo onSlideChange
-        <SwiperSlide key={`slide_${i}`} data-title={name} ref={sliderRef[i]}>
+        <SwiperSlide key={`slide_${i}`} data-title={name}>
           <div className={style.sliderImage}>
             <Image
               className={style.sliderImage__mobile}

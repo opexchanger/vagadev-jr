@@ -29,15 +29,6 @@ const games = [
     price: 159.0,
     categoryId: 1,
   },
-  {
-    id: 3,
-    name: 'Jogo 43',
-    coverSm: 'principal_banner_mobile.jpg',
-    coverBg: 'principal_banner_desktop.jpg',
-    description: 'Vamu ve qualqiue eras',
-    price: 399.95,
-    categoryId: 1,
-  },
 ];
 
 export default function Home() {
