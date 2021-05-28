@@ -1,13 +1,13 @@
-import Link from 'next/link';
-
 import style from './button.module.scss';
 
-export default function Button({ styles, children }) {
+export default function Button({ styles, children, handleClick }) {
   return (
-    <Link href='/'>
-      <a className={style.button} style={styles}>
-        {children}
-      </a>
-    </Link>
+    <button
+      className={style.button}
+      style={styles}
+      onClick={handleClick ? handleClick : undefined}
+    >
+      {children}
+    </button>
   );
 }

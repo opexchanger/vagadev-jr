@@ -4,19 +4,19 @@ import Container from '../Container';
 import IconButton from '../IconButton';
 import DropdownMenu from '../DropdownMenu';
 import Logo from '../Logo';
+import ShopBag from '../ShopBag';
 
 // icons
 import HamburgerMenu from '../../icons/hamburger-menu.svg';
 import CloseMenu from '../../icons/close-menu.svg';
 import PaperPlane from '../../icons/paper-plane.svg';
 import Search from '../../icons/search-solid.svg';
-import ShoppingBag from '../../icons/shopping-bag-solid.svg';
 
 import style from './header.module.scss';
 
 import { useState } from 'react';
 
-export default function Header() {
+export default function Header({ cart }) {
   // cria estado para a visibilidade do dropdown
   const [showMenu, setShowMenu] = useState(false);
 
@@ -47,16 +47,14 @@ export default function Header() {
         {/* menu exibido condicionalmente a partir do state */}
         {showMenu && (
           <DropdownMenu labelText='Navegue nossos títulos por categoria'>
-            <DropdownMenu.Title>Luta</DropdownMenu.Title>
-            <DropdownMenu.List>
+            <DropdownMenu.List title='Luta'>
               <DropdownMenu.ListItem>Mortal Kombat</DropdownMenu.ListItem>
               <DropdownMenu.ListItem>Smash Bros</DropdownMenu.ListItem>
               <DropdownMenu.ListItem>Tekken</DropdownMenu.ListItem>
               <DropdownMenu.ListItem>DBZ</DropdownMenu.ListItem>
             </DropdownMenu.List>
 
-            <DropdownMenu.Title>Luta</DropdownMenu.Title>
-            <DropdownMenu.List>
+            <DropdownMenu.List title='Outra categoria'>
               <DropdownMenu.ListItem>Mortal Kombat</DropdownMenu.ListItem>
               <DropdownMenu.ListItem>Smash Bros</DropdownMenu.ListItem>
               <DropdownMenu.ListItem>Tekken</DropdownMenu.ListItem>
@@ -80,10 +78,7 @@ export default function Header() {
             labelText='Procurar algum game'
             icon={<Search fill='#ffffff' height='100%' />}
           />
-          <IconButton
-            labelText='Ver o seu carrinho'
-            icon={<ShoppingBag fill='#ffffff' height='100%' />}
-          />
+          <ShopBag cart={cart} />
         </div>
       </Container>
     </header>

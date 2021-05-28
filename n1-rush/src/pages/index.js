@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import style from './index.module.scss';
 
 import Header from '../components/Header';
@@ -7,16 +9,28 @@ import ShelfTitle from '../components/ShelfTitle';
 import Shelf from '../components/Shelf';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
-import ShelfSlider from '../components/ShelfSlider';
 
 import featured from '../data/featured.json';
 import slides from '../data/slides.json';
+import { Modal } from '../components/Modal/modal';
 
 export default function Home() {
+  const [cart, setCart] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const addToCart = (item) => {
+    item.bought = true;
+    setShowModal(!showModal);
+    setCart((prevCart) => {
+      return [...prevCart, item];
+    });
+  };
+
   return (
     <>
-      <Header />
+      <Header cart={cart} />
       <main>
+        <Modal showModal={showModal} setShowModal={setShowModal} />
         <section className={style.sectionHero}>
           <Carousel items={slides} />
         </section>
@@ -38,13 +52,12 @@ export default function Home() {
           <section className={style.sectionProducts}>
             <ShelfTitle>Produtos em destaque</ShelfTitle>
             <div className={style.productsWrapper}>
-              {featured.map(({ id, name, price, cover }) => (
+              {featured.map((item) => (
                 <Shelf
-                  key={id}
-                  name={name}
-                  price={price}
-                  imageSrc={`/img/products/${cover}`}
-                  labelText={`Comprar jogo ${name}`}
+                  key={item.id}
+                  item={item}
+                  labelText={`Comprar jogo ${item.name}`}
+                  handleBuy={addToCart}
                 />
               ))}
             </div>
