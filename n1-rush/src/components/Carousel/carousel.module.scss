@@ -1,0 +1,100 @@
+.sliderImage {
+  height: 520px;
+  max-height: 80vh;
+  position: relative;
+}
+
+.sliderImage__desktop {
+  display: none !important;
+}
+
+//art-direction manual para o next/Image, que não aceita o srcset
+@media screen and (min-width: 600px) {
+  .sliderImage__desktop {
+    display: block !important;
+  }
+  .sliderImage__mobile {
+    display: none !important;
+  }
+}
+
+.heroOverlay {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 2rem;
+  padding-right: 3rem;
+  background-color: rgba($color: #000000, $alpha: 0.65);
+}
+
+.heroTitle,
+.heroPrice {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.heroTitle {
+  font-size: 3.25rem;
+  text-transform: uppercase;
+}
+
+.heroPrice {
+  color: var(--blue);
+  font-size: 6rem;
+
+  span {
+    font-size: 3.5rem;
+    vertical-align: text-top;
+  }
+}
+
+.heroText {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  text-align: right;
+  max-width: 350px;
+  float: right;
+}
+
+.sliderInfo {
+  display: flex;
+  h4 {
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+}
+
+.sliderTitle {
+  background-color: var(--blue);
+  flex-basis: 60%;
+  padding: 2rem 3rem;
+  border-bottom-left-radius: 15px;
+}
+
+.sliderControl {
+  background-color: var(--blue-dark);
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-basis: 40%;
+
+  @media screen and (max-width: 280px) {
+    flex-direction: column;
+    padding-left: 0;
+  }
+}
+
+.sliderCounters {
+  letter-spacing: 4px;
+}
+
+.sliderChevrons > * {
+  @media screen and (min-width: 340px) {
+    margin: 0 1rem;
+  }
+}

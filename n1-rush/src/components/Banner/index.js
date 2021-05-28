@@ -5,7 +5,8 @@ import style from './banner.module.scss';
 
 export default function Banner({ gameName, imageSrc, altText, ...restProps }) {
   return (
-    <article className={style.bannerWrapper} {...restProps}>
+    <article className={style.bannerWrapper} {...restProps} tabIndex={0}>
+      {/* tabindex faz ser focado com o teclado */}
       <Link href='/'>
         <a>
           <div className={style.imageWrapper}>

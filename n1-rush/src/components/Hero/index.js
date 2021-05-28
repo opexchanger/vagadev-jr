@@ -7,7 +7,7 @@ import style from './hero.module.scss';
 export default function Hero() {
   return (
     <section className={style.hero}>
-      <div className={style.sliderImage}>
+      {/* <div className={style.sliderImage}>
         <div className={style.heroOverlay}>
           <h2 className={style.heroTitle}>MORTAL KOMBAT</h2>
           <h2 className={style.heroPrice}>
@@ -45,7 +45,7 @@ export default function Hero() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

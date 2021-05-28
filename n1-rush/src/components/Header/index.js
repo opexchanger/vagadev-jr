@@ -18,10 +18,15 @@ import { useState } from 'react';
 
 export default function Header() {
   // cria estado para a visibilidade do dropdown
-  const [menuVisible, setMenuVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => setShowMenu(!showMenu);
 
   return (
-    <header className={style.header}>
+    <header
+      className={style.header}
+      style={showMenu ? { position: 'fixed' } : {}}
+    >
       <Container flex justify='space-between'>
         <div className={style.panelLeft}>
           {/* botão do menu recebendo state e função pra alternar */}
@@ -29,8 +34,8 @@ export default function Header() {
             labelText='Abrir o menu'
             icon={<HamburgerMenu fill='#ffffff' height='100%' />}
             iconActive={<CloseMenu fill='#ffffff' height='100%' />}
-            toggler={menuVisible}
-            onClick={() => setMenuVisible(!menuVisible)}
+            toggler={showMenu}
+            onClick={toggleMenu}
           />
           <Link href='/'>
             <a className={style.logoWrapper}>
@@ -40,7 +45,7 @@ export default function Header() {
         </div>
 
         {/* menu exibido condicionalmente a partir do state */}
-        {menuVisible && (
+        {showMenu && (
           <DropdownMenu labelText='Navegue nossos títulos por categoria'>
             <DropdownMenu.Title>Luta</DropdownMenu.Title>
             <DropdownMenu.List>
