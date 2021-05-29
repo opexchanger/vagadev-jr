@@ -21,6 +21,7 @@ export default function Banner({ gameName, imageSrc, altText, ...restProps }) {
 
           <footer className={style.bannerFooter}>
             <h4 className={style.bannerTitle}>{gameName}</h4>
+            <span className={style.title__line}></span>
           </footer>
         </a>
       </Link>

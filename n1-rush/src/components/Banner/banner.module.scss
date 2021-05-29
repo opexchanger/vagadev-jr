@@ -21,7 +21,7 @@
     border: 2px solid darkgoldenrod;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 690px) {
     margin: 0 1rem;
   }
 }
@@ -46,6 +46,9 @@
     var(--blue) 2% 100%
   );
   padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
 }
 
 .bannerTitle {
@@ -54,24 +57,16 @@
   overflow: hidden;
   transition: color 0.5s;
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  // é uma opção colocar elipse e não deixar quebrar pra segunda linha o título do jogo, mas por enquanto deixei assim
 
-  // experimentei dois jeitos de fazer o efeito, mas com esse não quebra se o título passar de uma linha
-  &::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    margin-right: -100%;
-    margin-left: 1rem;
-    height: 1.6px;
-    background-color: var(--blue-dark);
-    vertical-align: middle;
-    transform: translateY(-50%);
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+}
 
-    @media screen and (min-width: 900px) {
-      margin-left: 2rem;
-    }
-  }
+.title__line {
+  height: 1.6px;
+  flex-grow: 1;
+  background-color: var(--blue-dark);
+  margin-left: 10px;
 }
