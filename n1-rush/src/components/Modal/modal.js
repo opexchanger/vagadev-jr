@@ -1,8 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 
-import IconButton from '../IconButton';
-
 import CloseMenu from '../../icons/close-menu.svg';
 
 import style from './modal.module.scss';
@@ -44,15 +42,17 @@ export const Modal = ({ showModal, setShowModal }) => {
       {showModal ? (
         <div className={style.background} onClick={closeModal} ref={modalRef}>
           <animated.div style={animation}>
-            <div className={style.modalWrapper} showModal={showModal}>
-              <div className={style.ModalContent}>
-                <h1>Item comprado!</h1>
-                <button
-                  aria-label='Fechar mensagem'
-                  onClick={() => setShowModal((prev) => !prev)}
-                >
-                  Fechar
-                </button>
+            <div className={style.modalWrapper}>
+              <span
+                className={style.modalClose}
+                aria-label='Fechar mensagem'
+                onClick={() => setShowModal((prev) => !prev)}
+              >
+                <CloseMenu fill='#fff' />
+              </span>
+              <div className={style.modalContent}>
+                <h4>Pedido realizado com sucesso!</h4>
+                <img src='/img/mario.png' alt='Mario comemorando' />
               </div>
             </div>
           </animated.div>
