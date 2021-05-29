@@ -1,28 +1,44 @@
 .footerWrapper {
   margin-top: 8rem;
   display: flex;
+  height: 6rem;
   @media screen and (max-width: 250px) {
     flex-direction: column;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 7rem;
   }
 }
 
 .logoBox {
-  padding: 2rem;
+  padding: 0 2rem;
   background-color: var(--blue-dark);
   flex: 0 0 24%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+
+  @media screen and (min-width: 600px) {
+    padding-right: 4rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex: 0 0 28%;
+  }
 }
 
 .copyright {
-  padding: 2rem 1.5rem;
+  padding: 0 1.5rem;
   background-color: var(--blue);
   color: var(--white);
   width: 100%;
+  display: flex;
+  align-items: center;
 
   p {
-    max-width: 220px;
+    @media screen and (max-width: 600px) {
+      max-width: 220px;
+    }
     margin-bottom: 0;
   }
 }
