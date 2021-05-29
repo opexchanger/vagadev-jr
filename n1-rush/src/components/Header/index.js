@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+// components
 import Container from '../Container';
 import IconButton from '../IconButton';
 import DropdownMenu from '../DropdownMenu';
@@ -16,7 +17,7 @@ import style from './header.module.scss';
 
 import { useState } from 'react';
 
-export default function Header({ cart }) {
+export default function Header({ cart, categories, games }) {
   // cria estado para a visibilidade do dropdown
   const [showMenu, setShowMenu] = useState(false);
 
@@ -54,11 +55,16 @@ export default function Header({ cart }) {
               <DropdownMenu.ListItem>DBZ</DropdownMenu.ListItem>
             </DropdownMenu.List>
 
-            <DropdownMenu.List title='Outra categoria'>
-              <DropdownMenu.ListItem>Mortal Kombat</DropdownMenu.ListItem>
-              <DropdownMenu.ListItem>Smash Bros</DropdownMenu.ListItem>
-              <DropdownMenu.ListItem>Tekken</DropdownMenu.ListItem>
-              <DropdownMenu.ListItem>DBZ</DropdownMenu.ListItem>
+            <DropdownMenu.List title='Ação / Aventura'>
+              <DropdownMenu.ListItem>GTA V</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Tomb Raider</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>HALO</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Call of Duty</DropdownMenu.ListItem>
+            </DropdownMenu.List>
+
+            <DropdownMenu.List title='Corrida'>
+              <DropdownMenu.ListItem>NEED For SPEED</DropdownMenu.ListItem>
+              <DropdownMenu.ListItem>Forza Horizon</DropdownMenu.ListItem>
             </DropdownMenu.List>
           </DropdownMenu>
         )}

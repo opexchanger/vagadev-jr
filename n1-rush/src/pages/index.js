@@ -15,6 +15,8 @@ import Modal from '../components/Modal/modal';
 // import data
 import featured from '../data/featured.json';
 import slides from '../data/slides.json';
+import categories from '../data/categories.json';
+import games from '../data/games.json';
 
 export default function Home() {
   const [cart, setCart] = useState([]);
@@ -33,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} categories={categories} games={games} />
       <main>
         <Modal showModal={showModal} setShowModal={setShowModal} />
         <section className={style.sectionHero}>
