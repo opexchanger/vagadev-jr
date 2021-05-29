@@ -16,3 +16,22 @@
     background-color: var(--blue-middle);
   }
 }
+
+.buttonImg {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  height: 70px;
+}
+
+.purchased {
+  background-color: var(--blue-dark);
+  text-align: left;
+  position: relative;
+  padding-left: 1.5rem;
+  width: 190px;
+
+  &:hover {
+    background-color: var(--blue-dark);
+  }
+}

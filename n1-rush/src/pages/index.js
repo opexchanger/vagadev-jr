@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import style from './index.module.scss';
 
+// import components
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Container from '../components/Container';
@@ -9,21 +10,25 @@ import ShelfTitle from '../components/ShelfTitle';
 import Shelf from '../components/Shelf';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
+import Modal from '../components/Modal/modal';
 
+// import data
 import featured from '../data/featured.json';
 import slides from '../data/slides.json';
-import { Modal } from '../components/Modal/modal';
 
 export default function Home() {
   const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   const addToCart = (item) => {
-    item.bought = true;
-    setShowModal(!showModal);
+    // atualiza o carrinho
     setCart((prevCart) => {
       return [...prevCart, item];
     });
+    // marca o item como comprado
+    item.purchased = true;
+    // abre a modal
+    setShowModal((prev) => !prev);
   };
 
   return (

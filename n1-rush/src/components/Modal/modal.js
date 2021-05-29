@@ -5,7 +5,7 @@ import CloseMenu from '../../icons/close-menu.svg';
 
 import style from './modal.module.scss';
 
-export const Modal = ({ showModal, setShowModal }) => {
+export default function Modal({ showModal, setShowModal }) {
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -59,4 +59,4 @@ export const Modal = ({ showModal, setShowModal }) => {
       ) : null}
     </>
   );
-};
+}

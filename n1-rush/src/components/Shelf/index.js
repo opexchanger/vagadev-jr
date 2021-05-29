@@ -22,8 +22,9 @@ export default function Shelf({ item, labelText, handleBuy }) {
         <Button
           styles={{ marginTop: '2rem', alignSelf: 'center' }}
           handleClick={() => handleBuy(item)}
+          purchased={item.purchased}
         >
-          {item.bought ? 'Comprado!' : 'Comprar'}
+          {item.purchased ? 'Comprado!' : 'Comprar'}
         </Button>
       </div>
     </article>
