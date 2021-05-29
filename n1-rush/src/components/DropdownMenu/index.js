@@ -3,6 +3,7 @@ import style from './dropdown-menu.module.scss';
 export default function DropdownMenu({ labelText, children, ...restProps }) {
   return (
     <div {...restProps} className={style.dropdownWrapper}>
+      <span className={style.arrow}></span>
       <div className={style.menuContainer}>
         <nav aria-label={labelText} className={style.nav}>
           {children}
