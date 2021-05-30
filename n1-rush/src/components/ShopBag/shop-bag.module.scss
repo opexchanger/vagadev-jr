@@ -4,22 +4,22 @@
   position: relative;
   display: flex;
   align-items: center;
+  min-width: 52px; // pra não sair do lugar quando aparece a bullet
 
   svg {
     width: 32px;
     height: 24px;
   }
-
-  span {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: var(--blue);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 900;
-  }
+}
+.bullet {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 900;
 }

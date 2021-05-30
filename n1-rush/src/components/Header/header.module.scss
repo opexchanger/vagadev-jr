@@ -21,14 +21,17 @@
 
 // controla até onde crescem pra não ficarem muito espaçados
 .panelLeft {
-  flex-basis: 49%;
+  flex-basis: 40%;
   max-width: 170px;
 }
 .panelRight {
-  flex-basis: 40%;
   max-width: 180px;
   min-width: 130px;
   // tamanho mínimo pra não ficar muito dif´ícil de selecionar no celular
+
+  @media (min-width: 450px) {
+    flex-basis: 40%;
+  }
 
   @media (min-width: 900px) {
     max-width: 360px;
@@ -38,7 +41,7 @@
 .logoWrapper {
   margin-left: 10px;
   // não exibe quando a tela es´ta pequena demais
-  @media screen and (max-width: 299px) {
+  @media screen and (max-width: 330px) {
     display: none;
   }
 }
