@@ -33,8 +33,8 @@ export default function Header({ cart, categories, games }) {
           {/* botão do menu recebendo state e função pra alternar */}
           <IconButton
             labelText='Abrir o menu'
-            icon={<HamburgerMenu fill='#ffffff' height='100%' />}
-            iconActive={<CloseMenu fill='#ffffff' height='100%' />}
+            icon={<HamburgerMenu fill='#ffffff' width='32px' height='24px' />}
+            iconActive={<CloseMenu fill='#ffffff' width='32px' height='24px' />}
             toggler={showMenu}
             onClick={toggleMenu}
           />
@@ -71,18 +71,21 @@ export default function Header({ cart, categories, games }) {
 
         <div className={style.panelRight}>
           <IconButton
+            sideText='Contato'
             labelText='Abrir a tela de contato'
             icon={
               <PaperPlane
                 fill='#ffffff'
-                height='100%'
+                width='32px'
+                height='24px'
                 style={{ marginTop: '1px' }}
               />
             }
           />
           <IconButton
+            sideText='Buscar'
             labelText='Procurar algum game'
-            icon={<Search fill='#ffffff' height='100%' />}
+            icon={<Search fill='#ffffff' width='32px' height='24px' />}
           />
           <ShopBag cart={cart} />
         </div>

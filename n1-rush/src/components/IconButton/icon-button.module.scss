@@ -5,3 +5,33 @@
   cursor: pointer;
   color: red;
 }
+
+.withText {
+  svg {
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: rotate(-14deg);
+    }
+  }
+
+  & span {
+    display: none;
+    @media screen and (min-width: 900px) {
+      display: inline-block;
+      color: var(--white);
+      margin: 0 2rem;
+      font-size: 1.6rem;
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--white);
+  }
+}

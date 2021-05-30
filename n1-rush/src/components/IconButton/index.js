@@ -8,23 +8,21 @@ export default function IconButton({
   labelText,
   icon,
   iconActive,
+  sideText,
   handleClick,
   toggler,
   ...restProps
 }) {
   return (
     <button
-      className={style.button}
+      // se passou algum texto pra ser exibido, coloca a classe pra lidar com ele
+      className={`${style.button} ${sideText && style.withText}`}
       aria-label={labelText}
       onClick={handleClick ? handleClick : undefined}
-      // padrão pré definido por ser utilizado a maioria das vezes
-      style={{
-        width: `${width ? width : '32px'}`,
-        height: `${height ? height : '24px'}`,
-      }}
       {...restProps}
     >
       {!toggler ? icon : iconActive}
+      {sideText && <span>{sideText}</span>}
     </button>
   );
 }

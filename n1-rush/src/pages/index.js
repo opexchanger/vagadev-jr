@@ -30,19 +30,26 @@ export default function Home() {
     // marca o item como comprado
     item.purchased = true;
     // abre a modal
-    setShowModal((prev) => !prev);
+    setShowModal(true);
   };
 
   return (
     <>
+      {/* Navbar do site, passando o carrinho */}
       <Header cart={cart} categories={categories} games={games} />
+
       <main>
+        {/* Modal quando a compra é realizada */}
         <Modal showModal={showModal} setShowModal={setShowModal} />
+
+        {/* Slides do cabeçalho */}
         <section className={style.sectionHero}>
           <Carousel items={slides} />
         </section>
 
+        {/* conter a expansão do layout */}
         <Container width='90'>
+          {/* banners */}
           <section className={style.sectionBanners}>
             <Banner
               gameName='The legend of Zelda - Breath of the Wild'
@@ -56,6 +63,7 @@ export default function Home() {
             />
           </section>
 
+          {/* produtos em destaque */}
           <section className={style.sectionProducts}>
             <ShelfTitle>Produtos em destaque</ShelfTitle>
             <div className={style.productsWrapper}>
@@ -70,9 +78,8 @@ export default function Home() {
             </div>
           </section>
         </Container>
-
-        <Footer></Footer>
       </main>
+      <Footer />
     </>
   );
 }

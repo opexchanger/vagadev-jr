@@ -5,6 +5,10 @@
   width: 100%;
   background-color: transparent;
   z-index: 10;
+
+  @media (min-width: 900px) {
+    margin-top: 1.2rem;
+  }
 }
 
 .panelLeft,
@@ -25,6 +29,10 @@
   max-width: 180px;
   min-width: 130px;
   // tamanho mínimo pra não ficar muito dif´ícil de selecionar no celular
+
+  @media (min-width: 900px) {
+    max-width: 360px;
+  }
 }
 
 .logoWrapper {
