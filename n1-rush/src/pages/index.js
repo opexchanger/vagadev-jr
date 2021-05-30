@@ -22,11 +22,30 @@ export default function Home() {
   const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
+  // const addItemToCart = (cart, itemToAdd) => {
+  //   const itemAlreadyOnCart = cart.find((item) => item.id === itemToAdd.id); // ver se ele ja ta no carrinho
+  //   if (itemAlreadyOnCart) {
+  //     itemAlreadyOnCart.quantity += 1; // modifica por referencia, pega o objeto original
+  //     return [...cart];
+  //   } else {
+  //     return [...cart, { ...itemToAdd, quantity: 1 }]; // retorna um array novo
+  //   }
+  // };
+
   const addToCart = (item) => {
-    // atualiza o carrinho
-    setCart((prevCart) => {
-      return [...prevCart, item];
-    });
+    // verifica se o item já estava no carrinho
+    const itemAlreadyOnCart = cart.find((cartItem) => item.id === cartItem.id);
+
+    if (itemAlreadyOnCart) {
+      itemAlreadyOnCart.quantity += 1; // modificando o objeto dentro do cart, por referencia
+    } else {
+      // adiciona o item no carrinho
+      item.quantity = 1;
+      setCart((prevCart) => {
+        return [...prevCart, item];
+      });
+    }
+
     // marca o item como comprado
     item.purchased = true;
     // abre a modal
